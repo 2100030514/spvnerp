@@ -58,8 +58,8 @@ urlpatterns = [
     path('admin_get_attendance_student/', HodViews.admin_get_attendance_student, name="admin_get_attendance_student"),
     path('admin_profile/', HodViews.admin_profile, name="admin_profile"),
     path('admin_profile_update/', HodViews.admin_profile_update, name="admin_profile_update"),
-    
-
+    path('paymaintencefee/', HodViews.paymaintencefee, name="paymaintencefee"),
+    path('contactus/', StudentViews.contactus, name="contactus"),
 
     # URLS for Staff
     path('staff_home/', StaffViews.staff_home, name="staff_home"),
@@ -90,4 +90,5 @@ urlpatterns = [
     path('student_profile/', StudentViews.student_profile, name="student_profile"),
     path('student_profile_update/', StudentViews.student_profile_update, name="student_profile_update"),
     path('student_view_result/', StudentViews.student_view_result, name="student_view_result"),
+    path('student_fee/', StudentViews.student_fee, name="student_fee"),
 ]

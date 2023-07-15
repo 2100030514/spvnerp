@@ -6,7 +6,6 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
 import json
-
 from student_management_app.models import CustomUser, Staffs, Courses, Subjects, Students, SessionYearModel, FeedBackStudent, FeedBackStaffs, LeaveReportStudent, LeaveReportStaff, Attendance, AttendanceReport
 from .forms import AddStudentForm, EditStudentForm
 
@@ -29,7 +28,7 @@ def admin_home(request):
         course_name_list.append(course.course_name)
         subject_count_list.append(subjects)
         student_count_list_in_course.append(students)
-    
+
     subject_all = Subjects.objects.all()
     subject_list = []
     student_count_list_in_subject = []
@@ -38,7 +37,7 @@ def admin_home(request):
         student_count = Students.objects.filter(course_id=course.id).count()
         subject_list.append(subject.subject_name)
         student_count_list_in_subject.append(student_count)
-    
+
     # For Saffs
     staff_attendance_present_list=[]
     staff_attendance_leave_list=[]
@@ -153,7 +152,7 @@ def edit_staff_save(request):
             user.email = email
             user.username = username
             user.save()
-            
+
             # INSERTING into Staff Model
             staff_model = Staffs.objects.get(admin=staff_id)
             staff_model.address = address
@@ -345,6 +344,7 @@ def add_student_save(request):
             password = form.cleaned_data['password']
             address = form.cleaned_data['address']
             session_year_id = form.cleaned_data['session_year_id']
+            Fee=form.cleaned_data['Fee']
             course_id = form.cleaned_data['course_id']
             gender = form.cleaned_data['gender']
 
@@ -371,6 +371,7 @@ def add_student_save(request):
                 user.students.session_year_id = session_year_obj
 
                 user.students.gender = gender
+                user.students.Fee=Fee
                 user.students.profile_pic = profile_pic_url
                 user.save()
                 messages.success(request, "Student Added Successfully!")
@@ -510,7 +511,7 @@ def add_subject_save(request):
 
         course_id = request.POST.get('course')
         course = Courses.objects.get(id=course_id)
-        
+
         staff_id = request.POST.get('staff')
         staff = CustomUser.objects.get(id=staff_id)
 
@@ -563,7 +564,7 @@ def edit_subject_save(request):
 
             staff = CustomUser.objects.get(id=staff_id)
             subject.staff_id = staff
-            
+
             subject.save()
 
             messages.success(request, "Subject Updated Successfully.")
@@ -780,7 +781,7 @@ def admin_profile_update(request):
         except:
             messages.error(request, "Failed to Update Profile")
             return redirect('admin_profile')
-    
+
 
 
 def staff_profile(request):
@@ -790,5 +791,10 @@ def staff_profile(request):
 def student_profile(requtest):
     pass
 
+def paymaintencefee(request):
 
-
+    maintanance=Students.objects.all().count()*50
+    context = {
+        "maintance": maintanance,
+    }
+    return render(request,"hod_template/paymaintencefee.html",context)

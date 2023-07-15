@@ -1,11 +1,78 @@
 {% load static %}
 
-<!DOCTYPE html>
+<script type="text/javascript">var joomtutPopHeight = 600;var joomtutPopWidth = 400;var jtPbFixDisp=1;
+</script>
+
+
+
+
+
+
 <html>
+<head>
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Student Management System | Dashboard</title>
+  <title>My Website</title>
+  <!-- Include the necessary CSS and JS files -->
+  <link rel="stylesheet" href="path/to/bootstrap.min.css">
+  <script src="path/to/jquery.min.js"></script>
+  <script src="path/to/bootstrap.min.js"></script>
+</head>
+<body>
+  <!-- Navbar --><br>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'C:\Users\DELL\Downloads\django-student-management-system-master\django-student-management-system-master\static\admin\img\gis\s6.jpg' %}" alt="Logo" height="30">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Home</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://sriprakash.org/"><b>sri prakash web</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://sriprakash.org/sri4/index.php/spescontactus"><b>Contact Us</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://sriprakash.org/sri4/index.php/achievements/cbse-achivements/academic"><b>About Us</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://sriprakash.org/sri4/index.php/gallery/atidhi"><b>Gallery</b></a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://sriprakash.org/sri4/index.php/housetel"><b>Hostel</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://sriprakash.org/sri4/index.php/careers"><b>Carriers</b></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="https://sriprakash.org/sri4/index.php/institutions/schools"><b>Institutions</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://sriprakash.org/sri4/index.php/home/infrastructure"><b>InfraStructure</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://sriprakash.org/sri4/index.php/achievements/cbse-achivements/extra-curricular"><b>News</b></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -75,3 +142,62 @@
 <script src="{% static 'dist/js/demo.js'  %}"></script>
 </body>
 </html>
+<div class="marquee">
+  <marquee class="marq1" direction="left" behavior="scroll" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+    <p>
+      SSC - 2023 Happy to share that our School students secured 592, 590, 584, 582, 581... out of 600 in SSC-2023 results.
+      IPE - 2023 Happy to share that our Junior College Students secured 990, 987, 986, 984... out of 1000 Marks in Sr. Inter and 465, 464, 462, 461, 460... out of 470 in Jr. Inter 2023 results.
+      CBSE X - 2023 Happy to share that, our CBSE X students secured... 490, 487, 483, 482, 481 and many more out of 500, 100% pass in CBSE X Results 2023.
+      CBSE +2 - 2023 Happy to share that, our CBSE +2 students secured 464, 460, 452, 451, 450... out of 500 in CBSE Plus 2 results. School secured 100% Pass out of which 88% students got First Class.
+    </p>
+  </marquee>
+</div>
+  <style>
+    .main {
+    text-align: center;
+}
+.marq1 {
+
+     padding-top: 40px;
+     padding-bottom: 30px;
+        }
+
+
+.logo img {
+  height: 100px;
+  width : 500px;
+}
+
+  </style>
+<style>
+  body {
+    background-image: url("{% static 'admin/img/gis/spvn.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: red;
+}.marquee {
+  background-color: lightyellow;
+  display: inline-block;
+  padding: 10px;
+}
+
+.marquee p {
+  color: red;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+</style>
+
+
+
